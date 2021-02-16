@@ -1,0 +1,7 @@
+D:\Visual_Studio_projects\SAOD_0\bin\Debug\SAOD_0.exe.config
+D:\Visual_Studio_projects\SAOD_0\bin\Debug\SAOD_0.exe
+D:\Visual_Studio_projects\SAOD_0\bin\Debug\SAOD_0.pdb
+D:\Visual_Studio_projects\SAOD_0\obj\Debug\SAOD_0.csprojAssemblyReference.cache
+D:\Visual_Studio_projects\SAOD_0\obj\Debug\SAOD_0.csproj.CoreCompileInputs.cache
+D:\Visual_Studio_projects\SAOD_0\obj\Debug\SAOD_0.exe
+D:\Visual_Studio_projects\SAOD_0\obj\Debug\SAOD_0.pdb
