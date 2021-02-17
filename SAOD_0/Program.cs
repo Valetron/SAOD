@@ -19,7 +19,6 @@ namespace SAOD_0
                 fill(x, y + 1, color, d, array, recursion_deepth);
                 fill(x - 1, y, color, d, array, recursion_deepth);
                 fill(x, y - 1, color, d, array, recursion_deepth);
-                //Console.WriteLine("Deepth " + recursion_deepth);
             }
         }
 
@@ -29,6 +28,7 @@ namespace SAOD_0
             int y;
             int count_0 = 0;
             int count_1 = 0;
+            Stack<int> my_stack = new Stack<int>();
             Random p = new Random(); // if p<0.25 == 1 else 0
             Console.Write("X >> ");
             x = Convert.ToInt32(Console.ReadLine());
@@ -57,16 +57,15 @@ namespace SAOD_0
             Console.WriteLine("One - " + count_1);
             Console.WriteLine("Zero - " + count_0);
             Console.WriteLine("\nFilled");
+            fill(0, 0, 2, 0, matrix, 0);
             for (int i = 0; i < x; i++)
             {
                 for (int j = 0; j < y; j++)
                 {
-                    fill(i, j, 2, 0, matrix, 0);
                     Console.Write(matrix[i, j]);
                 }
                 Console.WriteLine();
             }
-            //Console.ReadKey();
         }
     }
 }
