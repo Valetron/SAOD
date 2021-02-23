@@ -9,27 +9,36 @@ namespace SAOD_0
     class MyStack<T> // pop peek count
     {
 
-        int[] array;
+        private T[] array;
+        private int size = 100;
 
-        MyStack(int array_size)
+        public MyStack()
         {
-            array = new int[array_size];
+            array = new T[size];
         }
 
-        public void Pop()
+        public void Push(T element)
         {
-            
+            Array.Resize(ref array, size + 1);
+            array[size] = element;
+            //++size;
         }
 
-        public int Peek()
+        public T Pop()
         {
-            return array[0];
+            T element = array[--size];
+
+            return element;
         }
 
-        public int Count()
+        public T Peek()
         {
-            return array.Length;
+            return array[size - 1];
         }
+
+        public bool is_empty { get { return size == 0; } }
+
+        public int count { get { return size; } }
 
     }
 }
