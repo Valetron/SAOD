@@ -1,40 +1,73 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SAOD_1
 {
-    class Program //сделать список векторный, перезагрузить get set, попробовать сделать foreach, метод IndexOF
+    class Program
     {
         static void Main(string[] args)
         {
-
-            VectorList<int> my_list = new VectorList<int>();
+            MyVectorList<int> list = new MyVectorList<int>();
             Random num = new Random();
-            int list_lenght;
+            int list_size;
+            int tmp;
 
             Console.Write("List size = ");
-            list_lenght = Convert.ToInt32(Console.ReadLine());
-
-            // работа метода Add
-            for (int i = 0; i < list_lenght; i++)
+            list_size = Convert.ToInt32(Console.ReadLine());
+            
+            // Заполнение числами
+            for (int i = 0; i < list_size; i++)
             {
-                my_list.Add(num.Next(0, 100));
+                list.Add(num.Next(-10, 10));
             }
-            Console.WriteLine("Method Add");
-            my_list.ShowList();
-            Console.WriteLine("\nLenght = " + Convert.ToString(my_list.Size));
-            // работа метода Insert
-            my_list.Insert(num.Next(10, 100), 0);
-            my_list.Insert(num.Next(10, 100), my_list.Size / 2);
-            my_list.Insert(num.Next(10, 100), my_list.Size - 1);
-            Console.WriteLine("\nMethod Insert");
-            my_list.ShowList();
+                
+            // Вывод первого и последнего значения, и количетсво элементов
+            Console.WriteLine($"First element - {list.First}, last element - {list.Last}, count of elements = {list.Count}");
+            
+            // Вставка в начало, середину и конец списка
+            list.Insert(num.Next(-10, 10), 0);
+            Console.WriteLine($"Insert in head First element - {list.First}, last element - {list.Last}, count of elements = {list.Count}");
+            list.Insert(num.Next(-10, 10), (int)(list.Count / 2));
+            Console.WriteLine($"Insert in middle First element - {list.First}, last element - {list.Last}, count of elements = {list.Count}");
+            list.Insert(num.Next(-10, 10), list.Count);
+            Console.WriteLine($"Insert in a tail First element - {list.First}, last element - {list.Last}, count of elements = {list.Count}");
 
-            Console.Read();
+            // Удаление из начала, середины и конца
+            list.RemoveAt(0);
+            Console.WriteLine($"Remove head First element - {list.First}, last element - {list.Last}, count of elements = {list.Count}");
+            list.RemoveAt((int)(list.Count / 2));
+            Console.WriteLine($"Remove middle First element - {list.First}, last element - {list.Last}, count of elements = {list.Count}");
+            list.RemoveAt(list.Count);
+            Console.WriteLine($"Remove tail First element - {list.First}, last element - {list.Last}, count of elements = {list.Count}");
 
+            // Вхождение элемента в коллекцию
+            tmp = num.Next(-10, 10);
+            if (list.Contains(tmp))
+            {
+                Console.WriteLine($"Element {tmp} is in list");
+            }
+            else
+            {
+                Console.WriteLine($"Element {tmp} is not in list");
+            }
+
+            // Вывод индекса первого вхождения элемента
+            tmp = num.Next(-10, 10);
+            if (list.IndexOf(tmp) >= 0)
+            {
+                Console.WriteLine($"Element {list[list.IndexOf(tmp)]} is in list, index = {list.IndexOf(tmp)}");
+            }
+            else
+            {
+                Console.WriteLine($"Element {tmp} is not in list");
+            }
+
+            // Перегрузка []
+            Console.Write("List = [");
+            for (int i = 0; i < list.Count; i++)
+            {
+                Console.Write(list[i] + " ");
+            }
+            Console.Write("]");
         }
     }
 }
