@@ -54,32 +54,45 @@ namespace SAOD_3
             var node = new Node<T>(elem);
             var curr = head;
 
-            for (int i = 0; i <= index & curr.next != null; i++)
+            if (index == 0)
             {
-                if (i == index - 1)
-                {
-                    Console.WriteLine(Convert.ToString(curr.next) + " " + node);
-                    curr.next = node;
-                    curr = curr.next;
-                    //curr = node;
-                    //curr.data = node.data;
-                }
-                else if (i == index)
-                {
-                    node.next = curr.next;
-                    count++;
-                }
-                else
+                AddFirst(elem);
+            }
+            else
+            {
+                for (int i = 0; i < index - 1 & curr.next != null; i++)
                 {
                     curr = curr.next;
                 }
-
+                node.next = curr.next;
+                curr.next = node;
+                count++;
             }
         }
 
         public void Remove(int index)
         {
+            var curr = head;
 
+            if (index == 0)
+            {
+                head = curr.next;
+                for (int i = 0; i < count - 1 & curr.next != null; i++)
+                {
+                    curr = curr.next;
+                }
+                tail = curr;
+                count--;
+            }
+            else
+            {
+                for (int i = 0; i < index - 1 & curr.next != null; i++)
+                {
+                    curr = curr.next;
+                }
+                curr.next = curr.next.next;
+                count--;
+            }
         }
 
         public void Clear()
@@ -87,6 +100,36 @@ namespace SAOD_3
             head = null;
             tail = null;
             count = 0;
+        }
+
+        public void Print()
+        {
+            var curr = head;
+
+            Console.Write("List = [ ");
+            while (curr != null)
+            {
+                Console.Write(curr.data + " ");
+                curr = curr.next;
+            }
+            Console.Write("]\n");
+        }
+
+        public int IndexOf(T elem)
+        {
+            var curr = head;
+            int index = 0;
+
+            while (curr != null)
+            {
+                if (object.Equals(elem, curr.data))
+                {
+                    return index;
+                }
+                index++;
+                curr = curr.next;
+            }
+            return -1;
         }
 
         private T GetValue(int position)

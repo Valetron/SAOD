@@ -14,45 +14,36 @@ namespace SAOD_3
             // добавить в начало
             list.AddFirst(num.Next(-10, 10));
 
-            // добавить в конец
-            list.AddLast(num.Next(-10, 10));
-
-            /*// добавить по индексу
-            tmp = num.Next(-100, 100);
-            Console.WriteLine(tmp);
-            list.Insert(tmp, 1);*/
-
-            // удалить по индексу
-
             // первый элемент
             Console.WriteLine($"First = {list.First}");
 
+            // добавить в конец
+            list.AddLast(num.Next(-10, 10));
+
             // последний элемент
             Console.WriteLine($"Last = {list.Last}");
+
+            // добавить по индексу
+            tmp = num.Next(-100, 100);
+            //Console.WriteLine(tmp);
+            list.Insert(tmp, 1);
+            list.Print();
+
+            // удалить по индексу
+            list.Remove(num.Next(0, list.Count));
+            list.Print();
 
             // количество элементов
             Console.WriteLine($"Count elements = {list.Count}");
 
             // первый узел с указанным значением
-            /*tmp = num.Next(-10, 10);
-            Console.WriteLine($"Element {list.GetValue(tmp)}, index {tmp}");*/
-
-            // вывод списка
-            Console.Write("List = [ ");
-            for (int i = 0; i < list.Count; i++)
-            {
-                Console.Write(list[i] + " ");
-            }
-            Console.Write("]\n");
+           //tmp = num.Next(-10, 10);
+            Console.Write($"Index of {tmp} is ");
+            Console.Write(list.IndexOf(tmp) + "\n");
 
             // очситка списка
             list.Clear();
-            Console.Write("List = [ ");
-            for (int i = 0; i < list.Count; i++)
-            {
-                Console.Write(list[i] + " ");
-            }
-            Console.Write("]");
+            list.Print();
         }
     }
 }
