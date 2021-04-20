@@ -76,12 +76,12 @@ namespace SAOD_3
 
             if (index == 0)
             {
-                head = curr.next;
-                for (int i = 0; i < count - 1 & curr.next != null; i++)
+                head = head.next;
+                /*for (int i = 0; i < count - 1 & curr.next != null; i++)
                 {
                     curr = curr.next;
                 }
-                tail = curr;
+                tail = curr;*/
                 count--;
             }
             else
@@ -177,6 +177,16 @@ namespace SAOD_3
         public T Last
         {
             get { return GetValue(count); }
+        }
+
+        public IEnumerator<T> GetEnumerator()
+        {
+            var current = head;
+            while (current != null)
+            {
+                yield return current.data;
+                current = current.next;
+            }
         }
     }
 }

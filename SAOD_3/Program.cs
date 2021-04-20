@@ -8,7 +8,6 @@ namespace SAOD_3
         {
             Random num = new Random();
             MyList<int> list = new MyList<int>();
-            int size;
             int tmp;
 
             // добавить в начало
@@ -40,6 +39,13 @@ namespace SAOD_3
            //tmp = num.Next(-10, 10);
             Console.Write($"Index of {tmp} is ");
             Console.Write(list.IndexOf(tmp) + "\n");
+
+            // перечисление
+            Console.WriteLine("Elements: ");
+            foreach (int elem in list)
+            {
+                Console.WriteLine(elem);
+            }
 
             // очситка списка
             list.Clear();
