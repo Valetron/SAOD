@@ -1,0 +1,13 @@
+D:\Visual_Studio_projects\SAOD_4\bin\Debug\netcoreapp3.1\SAOD_4.exe
+D:\Visual_Studio_projects\SAOD_4\bin\Debug\netcoreapp3.1\SAOD_4.deps.json
+D:\Visual_Studio_projects\SAOD_4\bin\Debug\netcoreapp3.1\SAOD_4.runtimeconfig.json
+D:\Visual_Studio_projects\SAOD_4\bin\Debug\netcoreapp3.1\SAOD_4.runtimeconfig.dev.json
+D:\Visual_Studio_projects\SAOD_4\bin\Debug\netcoreapp3.1\SAOD_4.dll
+D:\Visual_Studio_projects\SAOD_4\bin\Debug\netcoreapp3.1\SAOD_4.pdb
+D:\Visual_Studio_projects\SAOD_4\obj\Debug\netcoreapp3.1\SAOD_4.csprojAssemblyReference.cache
+D:\Visual_Studio_projects\SAOD_4\obj\Debug\netcoreapp3.1\SAOD_4.AssemblyInfoInputs.cache
+D:\Visual_Studio_projects\SAOD_4\obj\Debug\netcoreapp3.1\SAOD_4.AssemblyInfo.cs
+D:\Visual_Studio_projects\SAOD_4\obj\Debug\netcoreapp3.1\SAOD_4.csproj.CoreCompileInputs.cache
+D:\Visual_Studio_projects\SAOD_4\obj\Debug\netcoreapp3.1\SAOD_4.dll
+D:\Visual_Studio_projects\SAOD_4\obj\Debug\netcoreapp3.1\SAOD_4.pdb
+D:\Visual_Studio_projects\SAOD_4\obj\Debug\netcoreapp3.1\SAOD_4.genruntimeconfig.cache
