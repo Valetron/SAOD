@@ -25,11 +25,7 @@ namespace SAOD_5
 
         public bool Empty()
         {
-            if (Count == 0)
-            {
-                return true;
-            }
-            return false;
+            return Count == 0;
         }
     }
 }
